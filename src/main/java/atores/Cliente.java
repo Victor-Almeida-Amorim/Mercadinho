@@ -8,6 +8,7 @@ package atores;
  * Classe criada para representar a o cliente no ambiente do mercadinho
  * @author Mariana Morais
  * @author Victor Amorim
+ * @version 1.0
  */
 public class Cliente extends Pessoa{
     private String apelido;
