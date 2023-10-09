@@ -6,7 +6,8 @@ package atores;
 
 /**
  * Classe criada para representar a o cliente no ambiente do mercadinho
- * @author mesmo
+ * @author Mariana Morais
+ * @author Victor Amorim
  */
 public class Cliente extends Pessoa{
     private String apelido;
@@ -17,8 +18,16 @@ public class Cliente extends Pessoa{
     private String cidade;
     
     /**
-     * Construtor para criar o objeto do Cliente
-    */
+     * Construtor que inicializa o objeto Cliente
+     * @param nome tipo String
+     * @param sobrenome tipo String
+     * @param apelido tipo String
+     * @param telefone tipo String
+     * @param cpf tipo string
+     * @param rua tipo String
+     * @param numero tipo String
+     * @param cidade tipo String
+     */
     public Cliente (String nome, String sobrenome,String apelido, String telefone, String cpf, String rua, String numero, String cidade)
     {
         super(nome,sobrenome);
@@ -31,52 +40,97 @@ public class Cliente extends Pessoa{
     }
     
     /**
-     * Criação de Getters e Setters
-    */
+     * set para o atributo Apelido
+     * @param apelido tipo String
+     */
     public void setApelido(String apelido) {
         this.apelido = apelido;
     }
-
+    
+    /**
+     * set para o atributo Telefone
+     * @param telefone tipo String
+     */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
+    
+    /**
+     * set para o astributo Cpf
+     * @param cpf tipo String
+     */
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
+    
+    /**
+     * set para o atributo Rua
+     * @param rua tipo String
+     */
     public void setRua(String rua) {
         this.rua = rua;
     }
 
+    /**
+     * set para o atributo Numero
+     * @param numero tipo String
+     */
     public void setNumero(String numero) {
         this.numero = numero;
     }
 
+    /**
+     * set para o atributo Cidade
+     * @param cidade tipo String
+     */
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
     
+    /**
+     * get para o atributo Apelido, retorna uma String
+     * @return tipo String
+     */
     public String getApelido() {
         return apelido;
     }
 
+    /**
+     * get para o atributo Telefone, retorna uma string
+     * @return tipo String
+     */
     public String getTelefone() {
         return telefone;
     }
 
+    /**
+     * get para o atributo Cpf, retorna uma string
+     * @return tipo String
+     */
     public String getCpf() {
         return cpf;
     }
 
+    /**
+     * get para o atributo Rua, retorna uma string
+     * @return tipo String
+     */
     public String getRua() {
         return rua;
     }
 
+    /**
+     * get para o atributo Numero, retorna uma string
+     * @return tipo String
+     */
     public String getNumero() {
         return numero;
     }
 
+    /**
+     * get para o atributo Cidade, retorna uma string
+     * @return tipo String
+     */
     public String getCidade() {
         return cidade;
     } 

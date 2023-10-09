@@ -12,7 +12,8 @@ import java.util.List;
 
 /**
  * Classe criada para cadastar a compra de um produto no sistema
- * @author Mariana Morais e Victor Amorim
+ * @author Mariana Morais
+ * @author Victor Amorim
  */
 public class CadastrarProduto {
     private static Scanner input = new Scanner(System.in);
@@ -28,7 +29,18 @@ public class CadastrarProduto {
     private static boolean pare = false;
     
     /**
+     * Construtor Padrão
+     */
+    public CadastrarProduto()
+    {
+        
+    }
+    
+    /**
      * Método que vai instanciar um objeto do tipo Produto e o guardar no sistema.
+     * @param listaProduto lista do tipo Produto
+     * @return lista de Produto
+     * @throws ParseException - excessão
      */
     public static List<Produto> Cadastrar(List<Produto> listaProduto) throws ParseException
     {

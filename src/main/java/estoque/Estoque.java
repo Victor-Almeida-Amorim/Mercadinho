@@ -9,13 +9,22 @@ import java.util.Scanner;
 
 /**
  * Classe usada para representar o funcionamento de um Estoque em um Mercadinho
- * @author mesmo
+ * @author Mariana Morais
+ * @author Victor Amorim
  */
 public class Estoque {
     
     /**
+     * Construtor Padrão
+     */
+    public Estoque()
+    {
+        
+    }
+    
+    /**
      * Método que irá retornar a lista dos produtos por categoria
-     * @param listaProduto 
+     * @param listaProduto lista tipo Produto
      */
     public static void buscarCategoria(List<Produto> listaProduto)
     {
@@ -48,7 +57,7 @@ public class Estoque {
     
     /**
      * Método que buscará os produtos pelo código
-     * @param listaProduto 
+     * @param listaProduto lista tipo Produto
      */
     public static void buscarCodigo(List<Produto> listaProduto)
     {
@@ -81,7 +90,7 @@ public class Estoque {
     
     /**
      * Método que buscará os produtos pelo seu nome
-     * @param listaProduto 
+     * @param listaProduto lista tipo Produto
      */
     public static void buscarNome(List<Produto> listaProduto)
     {

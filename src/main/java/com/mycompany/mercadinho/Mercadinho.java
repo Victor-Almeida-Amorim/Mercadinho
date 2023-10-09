@@ -19,12 +19,21 @@ import uso.GerenciarSuperior;
 /**
  * Classe que representa a interface do Sistema do Mercadinho, onde os usuarios 
  * do sistema vão executar suas tarefas.
- * @author Mariana Morais e Victor Amorim
+ * @author Mariana Morais
+ * @author Victor Amorim
  */
 public class Mercadinho {
     /**
+     * Construtor Padrão
+     */
+    public Mercadinho()
+    {
+        
+    }
+    /**
      * Onde os Usuarios interagem com o sistema
-     * @param args
+     * @param args método main
+     * @throws ParseException excessão
      */
     public static void main(String[] args) throws ParseException {
         //Instanciação de objetos e listas de objetos par alimentar o sistema, pelo menos a princípio
@@ -37,11 +46,16 @@ public class Mercadinho {
         listaUsuario.add(new Usuario(102,"nome1", "sobrenome1", "email1", "senha1"));
         listaSuperior.add(new Superior(123, "nome", "sobrenome", "email", "senha"));
         
+        //Instanciamento do usuario atual
         Usuario usuarioAtual = new Usuario();
+        //Efetuação do logiun
         usuarioAtual = Mercadinho.loginSistema(listaSuperior,listaUsuario);
         
+        //Interface do sistemaa
+        //Interface do Superior
         if (usuarioAtual instanceof Superior) 
         {
+            //Funções do Superior
             System.out.println("Menu de Superior\n============================");
             System.out.println("1. Gerenciar Superiores e Usuarios");
             System.out.println("2. Cadastrar Compras");
@@ -50,6 +64,7 @@ public class Mercadinho {
             System.out.println("============================");
             switch (escolha)
             {
+                //Gerenciamento da conta do Superior
                 case "1":
                     System.out.println("============================");
                     System.out.println("1. Cadastrar Superior");
@@ -78,10 +93,12 @@ public class Mercadinho {
                             GerenciarSuperior.eliminarSuperior(listaSuperior);
                     }
                 case "2":
+                    //Cadastro de compra de produtos
                     System.out.println("============================");
                     System.out.println("Selecionado: 2. Cadastrar Compras");
                     listaProduto.addAll(CadastrarProduto.Cadastrar(listaProduto));
                 case "3": 
+                    //Conbtrole de estoque
                     System.out.println("============================");
                     System.out.println("Selecionado: 3. Gerenciar Estoque");
                     System.out.println("============================");
@@ -97,17 +114,27 @@ public class Mercadinho {
                             Estoque.buscarCategoria(listaProduto);
                         case "2":
                             System.out.println("Selecionado: 2. Busca poe Código\n============================");
-                        
+                            Estoque.buscarCodigo(listaProduto);
                         case "3":
                             System.out.println("Selecionado: 3. Busca por Nome\n============================");
+                            Estoque.buscarNome(listaProduto);
                     }
             }
         }else if(usuarioAtual instanceof Usuario)
         {
+            //Interface do Usuario
             System.out.println("Menu de Usuario\n============================\n");
         }
     }
     
+    /**
+     * método que recebe uma lista de Superiores e Usuarios, recebe credenciais 
+     * de login (Email e Senha) e se confirmar o login, retorna para o sistema
+     * o objeto verificado (usuarioAtual), possibilitando assim o acesso ao sistema
+     * @param listaSuperior lista tipo Superior
+     * @param listaUsuario lista tipo Usuario
+     * @return retorna um tipo Usuario
+     */
     public static Usuario loginSistema(List<Superior> listaSuperior, List<Usuario> listaUsuario)
     {
         Usuario userAtual = null;

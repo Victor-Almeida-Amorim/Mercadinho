@@ -10,7 +10,8 @@ import java.util.Scanner;
 
 /**
  * Classe criada para implementar o Gerenciamento dos Superiores
- * @author Mariana Morais e Victor Amorim 
+ * @author Mariana Morais
+ * @author Victor Amorim
  */
 public class GerenciarSuperior {
     private static Scanner input = new Scanner(System.in);
@@ -26,6 +27,13 @@ public class GerenciarSuperior {
     private static boolean mudou = false;
     private static String continua;
     
+    /**
+     * Construtor Padrão
+     */
+    public GerenciarSuperior()
+    {
+    
+    } 
     /**
      * Método usado para cadastrar Usuario, o sistema requesitará credenciais (email e senha)
      * do superior responsavel pelo cadastro, caso a validação seja efetuada,
@@ -189,8 +197,7 @@ public class GerenciarSuperior {
     /**
      * Método criado para eliminar um Superior, irá definir o ponteiro s como null,
      * deixando o objeto sem referência. Ele será eventualmente coletado pelo garbage.
-     * @param s Superior que será excluido
-     * @return retorna o ponteiro com a posição null
+     * @param listaSuperior tipo Superior
      */
     public static void eliminarSuperior(List<Superior> listaSuperior)
     {

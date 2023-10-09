@@ -10,7 +10,8 @@ import java.util.Scanner;
 
 /**
  * Classe criada para implementar o Gerenciamento dos Usuários
- * @author Mariana Morais e Victor Amorim 
+ * @author Mariana Morais
+ * @author Victor Amorim
  */
 public class GerenciarUsuario {
     private static Scanner input = new Scanner(System.in);
@@ -28,6 +29,7 @@ public class GerenciarUsuario {
      * senha e encerrará a opereação. Caso não forem válidas, o sistema 
      * vai acusar a falha e perguntar se o usuario deseja tentar novamente, caso S, 
      * pedirá as credenciais novamente, caso N, irá encerrar a operação.
+     * @param u tipo Uusario
      */
     public static void mudarSenha(Usuario u)
     {
@@ -68,9 +70,12 @@ public class GerenciarUsuario {
             }
         }
     }
+    
     /**
      * Método criado para eliminar um Usuario, irá definir o ponteiro u como null,
      * deixando o objeto sem referência. Ele será eventualmente coletado pelo garbage.
+     * @param u tipo Usuario
+     * @return tipo Usuaio
      */
     public static Usuario eliminarUsuario(Usuario u)
     {
@@ -80,6 +85,7 @@ public class GerenciarUsuario {
     
     /**
      * Método criado para editar as informações de um Superior
+     * @param listaUsuario lista de Usuario
      */
     public static void editarUsuario(List<Usuario> listaUsuario)
     {
