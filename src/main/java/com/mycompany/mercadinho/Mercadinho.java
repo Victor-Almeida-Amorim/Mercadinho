@@ -3,19 +3,19 @@
  */
 
 package com.mycompany.mercadinho;
-import estoque.Estoque;
-import uso.CadastrarProduto;
-import atores.Cliente;
-import atores.Superior;
-import atores.Pessoa;
-import estoque.Estoque;
-import atores.Usuario;
+import com.mycompany.estoque.Estoque;
+import com.mycompany.uso.CadastrarProduto;
+import com.mycompany.atores.Cliente;
+import com.mycompany.atores.Superior;
+import com.mycompany.atores.Pessoa;
+import com.mycompany.estoque.Estoque;
+import com.mycompany.atores.Usuario;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import produto.Produto;
-import uso.GerenciarSuperior;
+import com.mycompany.produto.Produto;
+import com.mycompany.uso.GerenciarSuperior;
 /**
  * Classe que representa a interface do Sistema do Mercadinho, onde os usuarios 
  * do sistema vão executar suas tarefas.

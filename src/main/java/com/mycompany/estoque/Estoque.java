@@ -2,8 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package estoque;
-import produto.Produto;
+package com.mycompany.estoque;
+import com.mycompany.produto.Produto;
 import java.util.List;
 import java.util.Scanner;
 

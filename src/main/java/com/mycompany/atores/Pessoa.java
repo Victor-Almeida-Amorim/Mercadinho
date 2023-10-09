@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package atores;
+package com.mycompany.atores;
 
 /**
  * Modelo de Classe que serve para os Atores do Sistema - Usuario, Cliente e Superior

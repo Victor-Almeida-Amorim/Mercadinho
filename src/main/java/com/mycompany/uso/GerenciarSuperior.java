@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package uso;
-import atores.Superior;
-import atores.Usuario;
+package com.mycompany.uso;
+import com.mycompany.atores.Superior;
+import com.mycompany.atores.Usuario;
 import java.util.List;
 import java.util.Scanner;
 
