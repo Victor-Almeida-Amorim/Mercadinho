@@ -103,7 +103,7 @@ public class GerenciarSuperior {
         senhaSup = input.nextLine();
         while(pare!=true)
         {
-            if((email.equals(s.getSenha())) && (senha.equals(s.getSenha())))
+            if((email.equals(s.getSenha())) && (senha.equals(s.getSenha())) && (s instanceof Superior))
             {
                 System.out.printf("Insira o codigo: ");
                 codigo = input.nextInt();
@@ -192,10 +192,24 @@ public class GerenciarSuperior {
      * @param s Superior que será excluido
      * @return retorna o ponteiro com a posição null
      */
-    public static Superior eliminarSuperior(Superior s)
+    public static void eliminarSuperior(List<Superior> listaSuperior)
     {
-        s = null;
-        return s;
+        pare = false;
+        while(pare != true)
+        {
+            System.out.println("Insira o email: ");
+            email = input.nextLine();
+            System.out.println("Insira a senha: ");
+            senha = input.nextLine();
+            for(Superior s : listaSuperior)
+            {
+                if ((senha.equals(s.getSenha())) && (email.equals(s.getEmail())))
+                {
+                    s = null;
+                    System.out.println("Excluído com Sucesso!");
+                }
+            }
+        }
     }
     
     /**

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package produto;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,16 +32,18 @@ public class Produto {
      * @param precoCompra
      * @param precoVenda
      */
-    public Produto(String codigo, String nomeProduto, int quantidade, String categoria, Date dataValidade, Date dataFabricacao, double precoCompra, double precoVenda)
+    public Produto(String codigo, String nomeProduto, int quantidade, String categoria, String dataValidade, String dataFabricacao, double precoCompra, double precoVenda) throws ParseException
     {
+        SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
         this.codigo = codigo;
         this.nomeProduto = nomeProduto;
         this.quantidade = quantidade;
         this.categoria = categoria;
-        this.dataValidade = dataValidade;
-        this.dataFabricacao = dataFabricacao;
         this.precoCompra = precoCompra;
         this.precoVenda = precoVenda;
+        this.dataValidade = data.parse(dataValidade);
+        this.dataFabricacao = data.parse(dataFabricacao);
+        
     }
     
     public void setCodigo(String codigo) {

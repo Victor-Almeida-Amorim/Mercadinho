@@ -4,7 +4,7 @@
  */
 package estoque;
 import produto.Produto;
-import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,62 +12,104 @@ import java.util.Scanner;
  * @author mesmo
  */
 public class Estoque {
-    private static Scanner input = new Scanner(System.in);
-    private static Date data = new Date(2023, 10, 5);
-    private static Date data2 = new Date(2024, 10, 5);
-    private static int opcao;
     
-    private static Produto p = new Produto("101", "Carne", 43, "Gelado", data, data2, 1345.0 ,13.0);
-    
-    public static void exibirEstoque()
+    /**
+     * Método que irá retornar a lista dos produtos por categoria
+     * @param listaProduto 
+     */
+    public static void buscarCategoria(List<Produto> listaProduto)
     {
-        System.out.println("ESTOQUE\n======================================");
-        System.out.println("Insira 1 para ver os gelados\n ");
-        System.out.println("Insira 2 para ver as hortaliças\n ");
-        System.out.println("Insira 3 para ver as bebidas\n ");
-        System.out.println("Insira 1 para ver os não perecíveis\n ");
-        opcao = input.nextInt();
-        System.out.println("======================================\n");
+        Scanner input = new Scanner(System.in);
+        boolean pare = false;
+        String categoria;
+        String continua;
         
-        if(opcao==1)
+        while(pare!=true)
         {
-            if(p.getCategoria()!="Gelado")
+            System.out.println("Insira a Categoria que deseja pesquisar:");
+            categoria = input.next();
+            for(Produto p : listaProduto)
             {
-                System.out.println("Não há cadastro de gelados no sistema!");             
-            }else
-            {
-                System.out.println(p.toString());
+                if(categoria.equals(p.getCategoria()))
+                {
+                    System.out.printf("%s\n",p.toString());
+                }
             }
-        }else if(opcao==2)
-        {
-            if(p.getCategoria()!="Hortaliça")
+            System.out.println("Deseja realizar outra consulta(S/N)?");
+            continua = input.next();
+            continua.toUpperCase();
+            
+            if(continua.equals("N"));
             {
-                System.out.println("Não há cadastro de hortaliças no sistema!");             
-            }else
-            {
-                System.out.println(p.toString());
+                pare = true;
             }
-        } else if(opcao==3)
-        {
-            if(p.getCategoria()!="Bebida")
-            {
-                System.out.println("Não há cadastro de bebidas no sistema!");             
-            }else
-            {
-                System.out.println(p.toString());
-            }
-        } else if(opcao==4)
-        {
-            if(p.getCategoria()!="Não Perecível")
-            {
-                System.out.println("Não há cadastro de não perecíveis no sistema!");             
-            }else
-            {
-                System.out.println(p.toString());
-            }
-        } else
-        {
-            System.out.println("Código inválido!");
         }
     }
+    
+    /**
+     * Método que buscará os produtos pelo código
+     * @param listaProduto 
+     */
+    public static void buscarCodigo(List<Produto> listaProduto)
+    {
+        Scanner input = new Scanner(System.in);
+        boolean pare = false;
+        String codigo;
+        String continua;
+        
+        while(pare!=true)
+        {
+            System.out.println("Insira o Código que deseja pesquisar:");
+            codigo = input.next();
+            for(Produto p : listaProduto)
+            {
+                if(codigo.equals(p.getCodigo()))
+                {
+                    System.out.printf("%s\n",p.toString());
+                }
+            }
+            System.out.println("Deseja realizar outra consulta(S/N)?");
+            continua = input.next();
+            continua.toUpperCase();
+            
+            if(continua.equals("N"));
+            {
+                pare = true;
+            }
+        }
+    }
+    
+    /**
+     * Método que buscará os produtos pelo seu nome
+     * @param listaProduto 
+     */
+    public static void buscarNome(List<Produto> listaProduto)
+    {
+        Scanner input = new Scanner(System.in);
+        boolean pare = false;
+        String nome;
+        String continua;
+        
+        while(pare!=true)
+        {
+            System.out.println("Insira o Nome do Produto que deseja pesquisar:");
+            nome = input.next();
+            for(Produto p : listaProduto)
+            {
+                if(nome.equals(p.getNomeProduto()))
+                {
+                    System.out.printf("%s\n",p.toString());
+                }
+            }
+            System.out.println("Deseja realizar outra consulta(S/N)?");
+            continua = input.next();
+            continua.toUpperCase();
+            
+            if(continua.equals("N"));
+            {
+                pare = true;
+            }
+        }
+    }
+    
 }
