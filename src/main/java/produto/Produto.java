@@ -25,6 +25,7 @@ public class Produto {
     /**
      * Construtor com atributos para Produto
      * @param codigo tipo string
+     * @param nomeProduto
      * @param quantidade tipo int
      * @param categoria tipo string
      * @param dataValidade tipo date
